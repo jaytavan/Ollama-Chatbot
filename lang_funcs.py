@@ -70,7 +70,7 @@ def load_qa_chain(retriever, llm, prompt):
     
 def get_response(query, chain):
     # Getting response from chain
-    response = chain({'query': query})
+    response = chain.invoke({'query': query})
     
     # Wrapping the text for better output in Jupyter Notebook
     wrapped_text = textwrap.fill(response['result'], width=100)
